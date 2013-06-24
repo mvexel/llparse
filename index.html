@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang=en>
+  <head>
+    <meta charset=utf-8>
+    <title>osm llparse</title>
+    <style type="text/css">
+      body, input, select {font: 40px helvetica, sans-serif; text-align: center; color:white; background-color:black; border:none}
+      input {background-color:white; color:black}
+    </style>
+  </head>
+  <body OnLoad="document.llform.dirtystring.focus();">
+    <h1>llparse</h1>
+    <em>parse some coordinate containing string into an OSM link. Works for second quadrant coordinates (N-America) only.</em>
+    <p>
+    <form name="llform" action="parse.py">
+      <input placeholder="paste dirty string here" type="text" name="dirtystring">
+       zoom 
+      <select name="zoom">
+        <option value=10>10</option>
+        <option value=11>11</option>
+        <option value=12>12</option>
+        <option value=13>13</option>
+        <option value=14>14</option>
+        <option value=15>15</option>
+        <option value=16>16</option>
+        <option value=17 selected>17</option>
+        <option value=18>18</option>
+      </select>
+      <input type="submit" value="go" />
+    </form>
+  </body>
+</html>
+
