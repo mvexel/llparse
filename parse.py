@@ -16,14 +16,19 @@ if __name__ == "__main__":
         dirtystring = arguments["dirtystring"].value
         #print dirtystring
         coordinates = re.findall('-*\d+\.\d+', dirtystring)
-        if len(coordinates) != 2:
+        if len(coordinates) < 2:
             print "500 Internal Server Error"
+        hit = 0
         for coord in coordinates:
             coord = float(coord)
             if coord > 0: 
                 lat = coord
+                hit += 1
             else:
                 lon = coord
+                hit += 1
+            if hit == 2:
+                break
     if "zoom" in arguments:
         zoom = int(arguments["zoom"].value)
     osmurl = "http://osm.org/?mlon=%f&mlat=%f&zoom=%i" % (lon, lat, zoom)
