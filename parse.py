@@ -17,7 +17,7 @@ if __name__ == "__main__":
         #print dirtystring
         coordinates = re.findall('-*\d+\.\d+', dirtystring)
         if len(coordinates) < 2:
-            print "500 Internal Server Error"
+            sys.stdout.write("Status: 302 Moved\r\nLocation: meh.html\r\n\r\n")
         hit = 0
         for coord in coordinates:
             coord = float(coord)
