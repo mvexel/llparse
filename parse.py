@@ -11,7 +11,7 @@ if __name__ == "__main__":
     zoom = 17
     arguments = cgi.FieldStorage()
     if not "dirtystring" in arguments:
-        print "Status: 500 Internal Server Error"
+        sys.stdout.write("Status: 302 Moved\r\nLocation: meh.html\r\n\r\n")
     else:
         dirtystring = arguments["dirtystring"].value
         #print dirtystring
